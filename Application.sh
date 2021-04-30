@@ -1,8 +1,8 @@
 #!/bin/bash
 
-speedtest-cli --simple > ~/blood-and-milk/.speeds 2>&1 &
+#speedtest-cli --simple > ~/blood-and-milk/.speeds 2>&1 &
 
-gsettings set org.gnome.desktop.background picture-uri "file:///home/$USER/blood-and-milk/image/wall.png"
+gsettings set org.gnome.desktop.background picture-uri "~/blood-and-milk/cpu/bg.png"
 
 sleep 7
 
@@ -29,6 +29,7 @@ sleep 3
 
 conky -c ~/blood-and-milk/connections_list.conf &
 conky -c ~/blood-and-milk/processes_list.conf &
+conky -c ~/blood-and-milk/cpu/cpu &
 
 #sleep 10
 #conky -c ~/blood-and-milk/image/globus_gif &

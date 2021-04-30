@@ -34,7 +34,7 @@ max_user_text 15000
 
 TEXT
 
-#${image ~/hightech/cpu/bg.png -p 0,0 -s 638x233}
+#${image ~/blood-and-milk/cpu/bg.png -p 0,0 -s 638x233}
 #cpu1
 ${if_updatenr 1}${image ~/hightech/cpu/anim/li0.png -p 145,28 -s 80x80}${endif}
 ${if_updatenr 2}${image ~/hightech/cpu/anim/li1.png -p 145,28 -s 80x80}${endif}

@@ -4,12 +4,25 @@ function rgb_to_r_g_b(color,alpha)
 return ((0xffffff / 0x10000) % 0x100) / 255., ((0xffffff / 0x100) % 0x100) / 255., (0xffffff % 0x100) / 255., 1
 end
 
+center_x = 298
+center_y = 279
+radius = 234
+circle_width = 50
+line_length = 75
+cpu_table_length = 120
+cpu_table = {}
+
 function conky_main(color, alpha)
 	if conky_window == nil then return end
+    bef0 = os.clock()
 	local cs = cairo_xlib_surface_create(conky_window.display, conky_window.drawable, conky_window.visual, conky_window.width, conky_window.height)
 	cr = cairo_create(cs)
-	local updates = tonumber(conky_parse('${updates}'))
+    bef1 = os.clock()
+    --local updates = tonumber(conky_parse('${updates}'))
+    local updates = 4
+
 	if updates == 1 then
+        print('here')
 		-- colors and font
 		-- base_rgba = {234, 67, 53}
 		-- accent_rgba = {165, 173, 255, 1}
@@ -32,7 +45,13 @@ function conky_main(color, alpha)
 
 		-- to here ---------------------------------------------------------
 		-- base, cpu and clock
+
+        bef = os.clock()
 		draw_cpu_graph()
+        print((os.clock() - bef)/2.3)
+        print((os.clock() - bef0)/2.3)
+        print((os.clock() - bef1)/2.3)
+        print()
 	end
 	cairo_destroy(cr)
 	cairo_surface_destroy(cs)

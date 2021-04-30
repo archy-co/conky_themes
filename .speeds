@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/usr/bin/speedtest-cli", line 33, in <module>
+    sys.exit(load_entry_point('speedtest-cli==2.1.2', 'console_scripts', 'speedtest-cli')())
+  File "/usr/lib/python3.9/site-packages/speedtest.py", line 1986, in main
+    shell()
+  File "/usr/lib/python3.9/site-packages/speedtest.py", line 1872, in shell
+    speedtest = Speedtest(
+  File "/usr/lib/python3.9/site-packages/speedtest.py", line 1091, in __init__
+    self.get_config()
+  File "/usr/lib/python3.9/site-packages/speedtest.py", line 1173, in get_config
+    ignore_servers = list(
+ValueError: invalid literal for int() with base 10: ''
